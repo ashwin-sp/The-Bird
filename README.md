@@ -10,6 +10,8 @@ Ashwin Suresh Babu (NetID: as14091)
 
 ## Getting Started
 
+Open the project in Visual Studio Code and ...
+
 To start the web server: 
 ```
 cd cmd/web
@@ -57,4 +59,3 @@ chmod +x test_raft.sh
 ./test_raft.sh
 ```
 
-The entire development was done locally. So the behaviour in anubis IDE might be unexpected. 
