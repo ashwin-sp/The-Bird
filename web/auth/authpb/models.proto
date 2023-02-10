@@ -1,0 +1,29 @@
+syntax = "proto3";
+package authpb;
+
+message AuthMsg {
+  string Username = 1;
+  string Password = 2;
+}
+
+message AuthMsgResponse {
+  string RefreshToken = 1;
+  string AccessToken = 2;
+  int32 Status = 3;
+}
+
+message Token{
+  string TokenData = 1;
+}
+
+message AuthCookieMsg {
+  string RefreshToken = 1;
+  string AccessToken = 2;
+}
+
+service AuthService {
+  rpc SignUp(AuthMsg) returns (AuthMsgResponse) {}
+  rpc Login(AuthMsg) returns (AuthMsgResponse) {}
+  rpc MaintainSession(AuthCookieMsg) returns (AuthMsgResponse){}
+  rpc Logout(Token) returns (AuthMsgResponse) {}
+}

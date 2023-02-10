@@ -1,0 +1,51 @@
+syntax = "proto3";
+import "google/protobuf/timestamp.proto";
+package socialpb;
+
+message Status{
+  int32 data = 1;
+}
+
+message PostMsg {
+  google.protobuf.Timestamp Timestamp = 1;
+  string Message = 2;
+  string PostID = 3;
+  string Username = 4;
+  int32 Status = 5;
+}
+
+message FollowMapMsg {
+  string Username = 1;
+  string Follower = 2;
+  bool Status = 3;
+}
+
+message FeedRequestMsg {
+    string Username = 1;
+    int32 FromPage = 2;
+}
+
+message PostMsg2 {
+  google.protobuf.Timestamp Timestamp = 1;
+  string Message = 2;
+  string PostID = 3;
+  string Username = 4;
+}
+
+message ListOfPosts {
+  repeated PostMsg value = 1;
+  int32 Status = 2;
+}
+
+// message UserPostMap {
+//   map<string, ListOfPosts> data = 1;
+//   int32 Status = 2;
+// }
+
+service SocialService {
+  rpc CreatePost(PostMsg) returns (PostMsg) {}
+  rpc DeletePost(PostMsg) returns (Status) {}
+  rpc UpdateFollowStatus(FollowMapMsg) returns (Status){}
+  rpc ViewCreatedPosts(FeedRequestMsg) returns (ListOfPosts) {}
+  rpc ViewPersonalFeed(FeedRequestMsg) returns (ListOfPosts){}
+}
