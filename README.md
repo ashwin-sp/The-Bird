@@ -6,7 +6,7 @@ Ashwin Suresh Babu (NetID: as14091)
 
 ## Presentation
 
-![Architecture Daigram](https://github.com/os3224/final-project-b0c9bd62-as14091-sp6370/blob/main/Architecture.jpeg)
+![Architecture Diagram](https://github.com/os3224/final-project-b0c9bd62-as14091-sp6370/blob/main/Architecture.jpeg)
 
 ## Getting Started
 
